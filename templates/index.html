@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Attendance System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url('{{ url_for('static', filename='BG1.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFFFF;
+            font-family: Montserrat, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+        }
+        #videoContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        img {
+            border: 8px solid #000000;
+            border-radius: 10px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Montserrat, sans-serif;
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>FaceTrace.</h1>
+    <div id="videoContainer">
+        <img src="{{ url_for('video_feed') }}" width="850" height="550">
+    </div>
+    <button onclick="window.location.href='/attendance_log'">View Attendance Log</button>
+</body>
+</html>
